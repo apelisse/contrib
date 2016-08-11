@@ -16,7 +16,7 @@ type Pinger struct {
 	maxCount    int           // Will stop pinging after that many times
 }
 
-func newPinger(keyword string) *Pinger {
+func NewPinger(keyword string) *Pinger {
 	return &Pinger{
 		keyword: keyword,
 	}
