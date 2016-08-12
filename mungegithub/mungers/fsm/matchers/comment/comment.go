@@ -40,10 +40,8 @@ func (n Not) Match(comment *github.IssueComment) bool {
 	return !n.Matcher.Match(comment)
 }
 
-type CreatedAfter struct {
-	Date *time.Time
-}
+type CreatedAfter time.Time
 
 func (c CreatedAfter) Match(comment *github.IssueComment) bool {
-	return comment.CreatedAt.After(*c.Date)
+	return comment.CreatedAt.After(time.Time(c))
 }
